@@ -36,21 +36,25 @@ const sb = pickTheme => ([
   <Sidebar.Menu header="MAIN NAVIGATION" key="3">
     <Sidebar.Menu.Item icon={{ className: 'fa-dashboard' }} title="Dashboard Colors" >
       <Sidebar.Menu.Item
+        className="test1"
         icon={{ color: tinycolor('black').toString() }}
         onClick={() => pickTheme('skin-black')}
         title="Black"
       />
       <Sidebar.Menu.Item
+        className="test2"
         icon={{ color: tinycolor('black').lighten(10).toString() }}
         onClick={() => pickTheme('skin-black-light')}
         title="Black Light"
       />
       <Sidebar.Menu.Item
+        className="test3"
         icon={{ color: '#3c8dbc' }}
         onClick={() => pickTheme('skin-blue')}
         title="Blue"
       />
       <Sidebar.Menu.Item
+        className="test4"
         icon={{ color: tinycolor('#3c8dbc').lighten(10).toString() }}
         onClick={() => pickTheme('skin-blue-light')}
         title="Blue Light"
@@ -112,7 +116,7 @@ const sb = pickTheme => ([
       title="Widgets"
     />
     <Sidebar.Menu.Item icon={{ className: 'fa-pie-chart' }} title="Charts" >
-      <Sidebar.Menu.Item title="ChartJS" />
+      <Sidebar.Menu.Item className="test_____" title="ChartJS" />
       <Sidebar.Menu.Item title="Morris" />
       <Sidebar.Menu.Item title="Flot" />
       <Sidebar.Menu.Item title="Inline Charts" />

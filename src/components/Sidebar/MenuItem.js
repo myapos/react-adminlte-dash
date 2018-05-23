@@ -328,8 +328,12 @@ class MenuItem extends React.Component {
   toggleHover(state) { this.setState({ hover: state }); }
 
   render() {
+    // debugger;
+    // console.log('log:', this.props);
+    const { className } = this.props;
     return (
       <StyledMenuItem
+        className={`${className}`}
         collapse={this.props.collapse}
         hover={this.props.parentHover}
         level={this.props.level}
@@ -409,6 +413,7 @@ MenuItem.propTypes = {
   onClick: React.PropTypes.func,
   parentHover: React.PropTypes.bool,
   title: React.PropTypes.string,
+  className: React.PropTypes.string,
 };
 
 MenuItem.defaultProps = {
