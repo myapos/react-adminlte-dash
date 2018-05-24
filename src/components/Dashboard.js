@@ -47,17 +47,20 @@ class Dashboard extends React.Component {
       sidebarCollapse: this.props.initialCollapse,
     };
   }
+
+  componentDidUpdate() {
+  }
+
  /*eslint-disable*/
   componentDidMount() {
-    // debugger;
-    // console.log('log:', this.refs.content);
+    console.log('log:', this);
     window.addEventListener('resize', this.handleResizeOrClick.bind(this));
-    this.refs.content.children[0].addEventListener('click', this.handleResizeOrClick.bind(this));
+    // this.refs.content.children[0] && this.refs.content.children[0].addEventListener('click', this.handleResizeOrClick.bind(this));
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResizeOrClick.bind(this));
-    this.refs.content.children[0].addEventListener('click', this.handleResizeOrClick.bind(this));
+    // this.refs.content.children[0] && this.refs.content.children[0].addEventListener('click', this.handleResizeOrClick.bind(this));
   }
 
   handleResizeOrClick() {
@@ -74,7 +77,6 @@ class Dashboard extends React.Component {
   render() {
     const theme = themes[this.props.theme];
 
-    const content = 'content';
     return (
       <StyledDashboard>
         <ThemeProvider theme={theme}>
@@ -106,8 +108,9 @@ class Dashboard extends React.Component {
             name="content-wrapper"
             sidebarCollapse={this.state.sidebarCollapse}
             sidebarMini={this.props.sidebarMini}
+            onClick={() => this.handleResizeOrClick()}
           >
-            <span ref={content}> {this.props.children} </span>
+            {this.props.children}
           </Content>
         </ThemeProvider>
         <ThemeProvider theme={theme}>

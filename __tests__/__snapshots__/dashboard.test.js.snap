@@ -50,7 +50,8 @@ exports[`<Dashboard /> renders correctly with black theme 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -108,7 +109,8 @@ exports[`<Dashboard /> renders correctly with black-light theme 1`] = `
   </aside>
   <div
     className="gnzgiC"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="tiBAO" />
 </div>
@@ -166,7 +168,8 @@ exports[`<Dashboard /> renders correctly with blue theme 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -224,7 +227,8 @@ exports[`<Dashboard /> renders correctly with blue-light theme 1`] = `
   </aside>
   <div
     className="gnzgiC"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="tiBAO" />
 </div>
@@ -282,7 +286,8 @@ exports[`<Dashboard /> renders correctly with fixed and sidebarMini options 1`] 
   </aside>
   <div
     className="drFMkG"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -340,7 +345,8 @@ exports[`<Dashboard /> renders correctly with fixed option 1`] = `
   </aside>
   <div
     className="drFMkG"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -398,7 +404,8 @@ exports[`<Dashboard /> renders correctly with fixed, initialCollapse, and sideba
   </aside>
   <div
     className="bKmtkn"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="cgYtLz" />
 </div>
@@ -456,7 +463,8 @@ exports[`<Dashboard /> renders correctly with green theme 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -514,7 +522,8 @@ exports[`<Dashboard /> renders correctly with green-light theme 1`] = `
   </aside>
   <div
     className="gnzgiC"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="tiBAO" />
 </div>
@@ -572,7 +581,8 @@ exports[`<Dashboard /> renders correctly with initialCollapse and sidebarMini op
   </aside>
   <div
     className="kqnetR"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="cgYtLz" />
 </div>
@@ -630,7 +640,8 @@ exports[`<Dashboard /> renders correctly with initialCollapse option 1`] = `
   </aside>
   <div
     className="bHreLo"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="dOICQB" />
 </div>
@@ -688,7 +699,8 @@ exports[`<Dashboard /> renders correctly with no options 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -746,7 +758,8 @@ exports[`<Dashboard /> renders correctly with purple theme 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -804,7 +817,8 @@ exports[`<Dashboard /> renders correctly with purple-light theme 1`] = `
   </aside>
   <div
     className="gnzgiC"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="tiBAO" />
 </div>
@@ -862,7 +876,8 @@ exports[`<Dashboard /> renders correctly with red theme 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -920,7 +935,8 @@ exports[`<Dashboard /> renders correctly with red-light theme 1`] = `
   </aside>
   <div
     className="gnzgiC"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="tiBAO" />
 </div>
@@ -978,7 +994,8 @@ exports[`<Dashboard /> renders correctly with sidebarMini option 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -1036,7 +1053,8 @@ exports[`<Dashboard /> renders correctly with yellow theme 1`] = `
   </aside>
   <div
     className="jinfUS"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="iRrCnw" />
 </div>
@@ -1094,7 +1112,8 @@ exports[`<Dashboard /> renders correctly with yellow-light theme 1`] = `
   </aside>
   <div
     className="gnzgiC"
-    name="content-wrapper" />
+    name="content-wrapper"
+    onClick={[Function]} />
   <footer
     className="tiBAO" />
 </div>
