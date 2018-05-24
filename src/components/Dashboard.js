@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Content from './Content';
@@ -44,12 +43,27 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this._sidebarToggle = this.sidebarToggle.bind(this);
-
     this.state = {
       sidebarCollapse: this.props.initialCollapse,
     };
   }
+ /*eslint-disable*/
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize.bind(this));
+  }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    if(window.innerWidth < 1000) {
+      this.setState({ sidebarCollapse: true });
+    } else {
+      this.setState({ sidebarCollapse: false });
+    }
+  }
+  /*eslint-enable*/
   sidebarToggle() { this.setState({ sidebarCollapse: !this.state.sidebarCollapse }); }
 
   render() {
