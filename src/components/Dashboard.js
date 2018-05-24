@@ -49,25 +49,32 @@ class Dashboard extends React.Component {
   }
  /*eslint-disable*/
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize.bind(this));
+    // debugger;
+    // console.log('log:', this.refs.content);
+    window.addEventListener('resize', this.handleResizeOrClick.bind(this));
+    this.refs.content.children[0].addEventListener('click', this.handleResizeOrClick.bind(this));
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize.bind(this));
+    window.removeEventListener('resize', this.handleResizeOrClick.bind(this));
+    this.refs.content.children[0].addEventListener('click', this.handleResizeOrClick.bind(this));
   }
 
-  handleResize() {
+  handleResizeOrClick() {
     if(window.innerWidth < 1000) {
       this.setState({ sidebarCollapse: true });
     } else {
       this.setState({ sidebarCollapse: false });
     }
   }
+
   /*eslint-enable*/
   sidebarToggle() { this.setState({ sidebarCollapse: !this.state.sidebarCollapse }); }
 
   render() {
     const theme = themes[this.props.theme];
+
+    const content = 'content';
     return (
       <StyledDashboard>
         <ThemeProvider theme={theme}>
@@ -100,7 +107,7 @@ class Dashboard extends React.Component {
             sidebarCollapse={this.state.sidebarCollapse}
             sidebarMini={this.props.sidebarMini}
           >
-            {this.props.children}
+            <span ref={content}> {this.props.children} </span>
           </Content>
         </ThemeProvider>
         <ThemeProvider theme={theme}>
