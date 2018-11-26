@@ -1,5 +1,5 @@
 module.exports = {
-  "extends": "airbnb",
+  "extends": "phaistos-networks",
   "parser": "babel-eslint",
   "env": {
     "browser": true,
@@ -22,6 +22,9 @@ module.exports = {
     "react/sort-comp": 0,
     "react/no-multi-comp": 0,
     "react/require-default-props": 0,
-    "react/require-extension": 0
+    "react/require-extension": 0,
+    "max-len": 1,
+    "max-lines-per-function": 1
+
   }
 };
