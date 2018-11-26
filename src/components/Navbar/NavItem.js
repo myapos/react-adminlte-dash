@@ -15,15 +15,15 @@ import {
 
 const imageSize = `${Math.floor(parseInt(navbarHeight, 10) / 2)}px`;
 const imageMarginTop = `-${Math.ceil(
-  ((parseInt(imageSize, 10) +
-  parseInt(navbarPaddingHorizontal, 10) +
-  parseInt(navbarPaddingVertical, 10)) -
-  parseInt(navbarHeight, 10)) / 2)}px`;
+  ((parseInt(imageSize, 10)
+  + parseInt(navbarPaddingHorizontal, 10)
+  + parseInt(navbarPaddingVertical, 10))
+  - parseInt(navbarHeight, 10)) / 2)}px`;
 const imageMarginBottom = `-${Math.floor(
-  ((parseInt(imageSize, 10) +
-  parseInt(navbarPaddingHorizontal, 10) +
-  parseInt(navbarPaddingVertical, 10)) -
-  parseInt(navbarHeight, 10)) / 2)}px`;
+  ((parseInt(imageSize, 10)
+  + parseInt(navbarPaddingHorizontal, 10)
+  + parseInt(navbarPaddingVertical, 10))
+  - parseInt(navbarHeight, 10)) / 2)}px`;
 
 const StyledSpan = styled.span`
   @media (max-width: ${screenXsMin}) {
@@ -153,14 +153,14 @@ const displayImage = (src, icon) => {
 
 const NavItem = ({ title, onClick, href, image, iconClass }) => (
   <StyledItem>
-    {onClick &&
-      <StyledLink onClick={onClick} href={null}>
+    {onClick
+      && <StyledLink onClick={onClick} href={null}>
         {displayImage(image, iconClass)}
         <StyledSpan>{title}</StyledSpan>
       </StyledLink>
     }
-    {(!onClick && href) &&
-      <StyledLink href={href}>
+    {(!onClick && href)
+      && <StyledLink href={href}>
         {displayImage(image, iconClass)}
         <StyledSpan>{title}</StyledSpan>
       </StyledLink>

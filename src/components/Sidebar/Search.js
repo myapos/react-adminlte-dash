@@ -143,7 +143,7 @@ const StyledForm = styled.form`
 `;
 
 class Search extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       value: '',
@@ -152,16 +152,16 @@ class Search extends React.Component {
     this._buttonClick = this.buttonClick.bind(this);
   }
 
-  changeValue(event) {
+  changeValue (event) {
     this.setState({ value: event.target.value });
   }
 
-  buttonClick() {
+  buttonClick () {
     this.props.onClick(this.state.value);
     this.setState({ value: '' });
   }
 
-  render() {
+  render () {
     return (
       <StyledForm collapse={this.props.collapse} >
         <InputGroup>
@@ -170,8 +170,7 @@ class Search extends React.Component {
             name={this.props.name}
             placeholder={this.props.placeholder}
             value={this.state.value}
-            onChange={this._changeValue}
-          />
+            onChange={this._changeValue} />
           <StyledInputButton>
             <StyledButton name="searchButton" onClick={this._buttonClick}>
               <StyledIcon className="fa fa-search" />

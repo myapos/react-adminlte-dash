@@ -33,9 +33,7 @@ const common = {
       {
         test: /\.jsx?$/,
         loaders: ['eslint'],
-        include: [
-          config.paths.src,
-        ],
+        include: [config.paths.src],
       },
     ],
     loaders: [
@@ -65,9 +63,7 @@ const common = {
       },
     ],
   },
-  plugins: [
-    new SystemBellPlugin(),
-  ],
+  plugins: [new SystemBellPlugin()],
 };
 
 const siteCommon = {
@@ -76,9 +72,7 @@ const siteCommon = {
       {
         test: /\.jsx?$/,
         loaders: ['eslint'],
-        include: [
-          config.paths.demo,
-        ],
+        include: [config.paths.demo],
       },
     ],
   },
@@ -159,9 +153,7 @@ if (TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       new CleanWebpackPlugin(['gh-pages'], {
         verbose: false,
       }),
-      new CopyWebpackPlugin([
-        { from: 'public/user2-160x160.jpg', to: 'public' },
-      ]),
+      new CopyWebpackPlugin([{ from: 'public/user2-160x160.jpg', to: 'public' }]),
       new HtmlWebpackPlugin({
         template: 'lib/index_template.ejs',
         filename: 'index.html',
@@ -220,9 +212,7 @@ const distCommon = {
       {
         test: /\.jsx?$/,
         loaders: ['babel'],
-        include: [
-          config.paths.src,
-        ],
+        include: [config.paths.src],
       },
     ],
   },

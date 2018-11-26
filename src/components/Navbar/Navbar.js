@@ -76,9 +76,9 @@ const StyledNavbar = styled.nav`
     margin: 0;
   }
   @media (min-width: ${screenSmMin}) {
-    margin-left: ${props => ((!props.topNav && props.sidebarMini && props.collapse) ?
-      sidebarMiniWidth :
-      sidebarWidth)};
+    margin-left: ${props => ((!props.topNav && props.sidebarMini && props.collapse)
+    ? sidebarMiniWidth
+    : sidebarWidth)};
   }
 `;
 
@@ -86,9 +86,10 @@ const Navbar = props => (
   <StyledNavbar
     topNav={props.topNav}
     sidebarMini={props.sidebarMini}
-    collapse={props.collapse}
-  >
-    <ToggleButton name="sidebar-toggle" className="fa fa-bars" onClick={props.toggle} />
+    collapse={props.collapse}>
+    <ToggleButton
+      name="sidebar-toggle" className="fa fa-bars"
+      onClick={props.toggle} />
 
     <StyledNavbarMenu>
       <StyledNavbarMenuList name="navbar-menu-wrapper">

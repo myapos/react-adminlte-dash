@@ -16,15 +16,15 @@ import {
 
 const imageSize = `${Math.floor(parseInt(navbarHeight, 10) / 2)}px`;
 const imageMarginTop = `-${Math.ceil(
-  ((parseInt(imageSize, 10) +
-  parseInt(navbarPaddingHorizontal, 10) +
-  parseInt(navbarPaddingVertical, 10)) -
-  parseInt(navbarHeight, 10)) / 2)}px`;
+  ((parseInt(imageSize, 10)
+  + parseInt(navbarPaddingHorizontal, 10)
+  + parseInt(navbarPaddingVertical, 10))
+  - parseInt(navbarHeight, 10)) / 2)}px`;
 const imageMarginBottom = `-${Math.floor(
-  ((parseInt(imageSize, 10) +
-  parseInt(navbarPaddingHorizontal, 10) +
-  parseInt(navbarPaddingVertical, 10)) -
-  parseInt(navbarHeight, 10)) / 2)}px`;
+  ((parseInt(imageSize, 10)
+  + parseInt(navbarPaddingHorizontal, 10)
+  + parseInt(navbarPaddingVertical, 10))
+  - parseInt(navbarHeight, 10)) / 2)}px`;
 
 const StyledUserImage = styled.img`
   box-sizing: border-box;
@@ -177,7 +177,7 @@ const StyledUserMenu = styled.li`
 `;
 
 class UserMenu extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       open: false,
@@ -186,19 +186,19 @@ class UserMenu extends React.Component {
     this._closeMenu = this.closeMenu.bind(this);
   }
 
-  toggleMenu() {
+  toggleMenu () {
     this.setState({
       open: !this.state.open,
     });
   }
 
-  closeMenu() {
+  closeMenu () {
     this.setState({
       open: false,
     });
   }
 
-  render() {
+  render () {
     return (
       <StyledUserMenu onClick={this._toggleMenu} onMouseLeave={this._closeMenu} >
         <StyledUserImage src={this.props.image} />
@@ -209,12 +209,12 @@ class UserMenu extends React.Component {
             <UserMenuHeaderName>{this.props.name}</UserMenuHeaderName>
           </UserMenuHeader>
           <UserFooter>
-            {this.props.profileAction &&
-              <div style={{ float: 'left' }}>
+            {this.props.profileAction
+              && <div style={{ float: 'left' }}>
                 <UserFooterButton onClick={this.props.profileAction}>Profile</UserFooterButton>
               </div>}
-            {this.props.signOutAction &&
-              <div style={{ float: 'right' }}>
+            {this.props.signOutAction
+              && <div style={{ float: 'right' }}>
                 <UserFooterButton onClick={this.props.signOutAction}>Sign Out</UserFooterButton>
               </div>}
           </UserFooter>

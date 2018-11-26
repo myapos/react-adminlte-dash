@@ -49,28 +49,28 @@ const StyledAside = styled.aside`
   /* sidebar on large screens */
   @media (min-width: ${screenSmMin}) {
     margin-left: 0;
-    ${(props) => {
-      if (props.collapse) {
-        if (props.mini) {
-          return `
+    ${props => {
+    if (props.collapse) {
+      if (props.mini) {
+        return `
             width: ${sidebarMiniWidth};
             z-index: 850;
           `;
-        }
-        return `
+      }
+      return `
           -webkit-transform: translate(-${sidebarWidth}, 0);
           -ms-transform: translate(-${sidebarWidth}, 0);
           -o-transform: translate(-${sidebarWidth}, 0);
           transform: translate(-${sidebarWidth}, 0);
         `;
-      }
-      return `
+    }
+    return `
         -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
         transform: translate(0, 0);
       `;
-    }}
+  }}
   }
   /* sidebar on small screens */
   @media (max-width: ${screenXsMax}) {
@@ -106,8 +106,7 @@ const Sidebar = ({
   <StyledAside
     fixed={fixed}
     collapse={sidebarCollapse}
-    mini={sidebarMini}
-  >
+    mini={sidebarMini}>
     <StyledSection name="sidebar-wrapper">
       {renderChildren(children, sidebarCollapse)}
     </StyledSection>

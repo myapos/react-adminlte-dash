@@ -40,7 +40,7 @@ const StyledDashboard = styled.div`
 `;
 
 class Dashboard extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this._sidebarToggle = this.sidebarToggle.bind(this);
     this.state = {
@@ -48,10 +48,10 @@ class Dashboard extends React.Component {
     };
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
   }
 
- /*eslint-disable*/
+  /*eslint-disable*/
   componentDidMount() {
     console.log('log:', this);
     window.addEventListener('resize', this.handleResizeOrClick.bind(this));
@@ -71,10 +71,10 @@ class Dashboard extends React.Component {
     }
   }
 
-  /*eslint-enable*/
-  sidebarToggle() { this.setState({ sidebarCollapse: !this.state.sidebarCollapse }); }
+  /* eslint-enable*/
+  sidebarToggle () { this.setState({ sidebarCollapse: !this.state.sidebarCollapse }); }
 
-  render() {
+  render () {
     const theme = themes[this.props.theme];
 
     return (
@@ -88,8 +88,7 @@ class Dashboard extends React.Component {
             fixed={this.props.fixed}
             sidebarToggle={this._sidebarToggle}
             sidebarCollapse={this.state.sidebarCollapse}
-            sidebarMini={this.props.sidebarMini}
-          >
+            sidebarMini={this.props.sidebarMini}>
             {this.props.navbarChildren}
           </Header>
         </ThemeProvider>
@@ -97,8 +96,7 @@ class Dashboard extends React.Component {
           <Sidebar
             fixed={this.props.fixed}
             sidebarCollapse={this.state.sidebarCollapse}
-            sidebarMini={this.props.sidebarMini}
-          >
+            sidebarMini={this.props.sidebarMini}>
             {this.props.sidebarChildren}
           </Sidebar>
         </ThemeProvider>
@@ -108,16 +106,14 @@ class Dashboard extends React.Component {
             name="content-wrapper"
             sidebarCollapse={this.state.sidebarCollapse}
             sidebarMini={this.props.sidebarMini}
-            onClick={() => this.handleResizeOrClick()}
-          >
+            onClick={() => this.handleResizeOrClick()}>
             {this.props.children}
           </Content>
         </ThemeProvider>
         <ThemeProvider theme={theme}>
           <Footer
             sidebarCollapse={this.state.sidebarCollapse}
-            sidebarMini={this.props.sidebarMini}
-          >
+            sidebarMini={this.props.sidebarMini}>
             {this.props.footerChildren}
           </Footer>
         </ThemeProvider>

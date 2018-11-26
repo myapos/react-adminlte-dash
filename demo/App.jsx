@@ -14,15 +14,13 @@ const navMenu = () => ([
     href={`https://github.com/${pkgInfo.user}/${pkgInfo.name}`}
     iconClass="fa fa-github"
     key="1"
-    title="Github"
-  />,
+    title="Github" />,
   <Header.UserMenu
     name="Alexander Pierce"
     image="public/user2-160x160.jpg"
     profileAction={() => alert('Access profile')}
     signOutAction={() => alert('Sign out')}
-    key="2"
-  />,
+    key="2" />,
 ]);
 
 const sb = pickTheme => ([
@@ -30,8 +28,7 @@ const sb = pickTheme => ([
     name="Alexander Pierce"
     image="public/user2-160x160.jpg"
     online
-    key="1"
-  />,
+    key="1" />,
   <Sidebar.Search key="2" />,
   <Sidebar.Menu header="MAIN NAVIGATION" key="3">
     <Sidebar.Menu.Item icon={{ className: 'fa-dashboard' }} title="Dashboard Colors" >
@@ -39,72 +36,59 @@ const sb = pickTheme => ([
         className="test1"
         icon={{ color: tinycolor('black').toString() }}
         onClick={() => pickTheme('skin-black')}
-        title="Black"
-      />
+        title="Black" />
       <Sidebar.Menu.Item
         className="test2"
         icon={{ color: tinycolor('black').lighten(10).toString() }}
         onClick={() => pickTheme('skin-black-light')}
-        title="Black Light"
-      />
+        title="Black Light" />
       <Sidebar.Menu.Item
         className="test3"
         icon={{ color: '#3c8dbc' }}
         onClick={() => pickTheme('skin-blue')}
-        title="Blue"
-      />
+        title="Blue" />
       <Sidebar.Menu.Item
         className="test4"
         icon={{ color: tinycolor('#3c8dbc').lighten(10).toString() }}
         onClick={() => pickTheme('skin-blue-light')}
-        title="Blue Light"
-      />
+        title="Blue Light" />
       <Sidebar.Menu.Item
         icon={{ color: '#00a65a' }}
         onClick={() => pickTheme('skin-green')}
-        title="Green"
-      />
+        title="Green" />
       <Sidebar.Menu.Item
         icon={{ color: tinycolor('#00a65a').lighten(10).toString() }}
         onClick={() => pickTheme('skin-green-light')}
-        title="Green Light"
-      />
+        title="Green Light" />
       <Sidebar.Menu.Item
         icon={{ color: '#605ca8' }}
         onClick={() => pickTheme('skin-purple')}
-        title="Purple"
-      />
+        title="Purple" />
       <Sidebar.Menu.Item
         icon={{ color: tinycolor('#605ca8').lighten(10).toString() }}
         onClick={() => pickTheme('skin-purple-light')}
-        title="Purple Light"
-      />
+        title="Purple Light" />
       <Sidebar.Menu.Item
         icon={{ color: '#dd4b39' }}
         onClick={() => pickTheme('skin-red')}
-        title="Red"
-      />
+        title="Red" />
       <Sidebar.Menu.Item
         icon={{ color: tinycolor('#dd4b39').lighten(10).toString() }}
         onClick={() => pickTheme('skin-red-light')}
-        title="Red Light"
-      />
+        title="Red Light" />
       <Sidebar.Menu.Item
         icon={{ color: '#f39c12' }}
         onClick={() => pickTheme('skin-yellow')}
-        title="Yellow"
-      />
+        title="Yellow" />
       <Sidebar.Menu.Item
         icon={{ color: tinycolor('#f39c12').lighten(10).toString() }}
         onClick={() => pickTheme('skin-yellow-light')}
-        title="Yellow Light"
-      />
+        title="Yellow Light" />
     </Sidebar.Menu.Item>
     <Sidebar.Menu.Item
       icon={{ className: 'fa-files-o' }}
       labels={[{ key: 1, type: 'primary', text: '4' }]}
-      title="Layout Options"
-    >
+      title="Layout Options">
       <Sidebar.Menu.Item title="Top Navigation" />
       <Sidebar.Menu.Item title="Boxed" href="/boxed" />
       <Sidebar.Menu.Item title="Fixed" />
@@ -113,8 +97,7 @@ const sb = pickTheme => ([
     <Sidebar.Menu.Item
       icon={{ className: 'fa-th' }}
       labels={[{ key: 1, type: 'success', text: 'new' }]}
-      title="Widgets"
-    />
+      title="Widgets" />
     <Sidebar.Menu.Item icon={{ className: 'fa-pie-chart' }} title="Charts" >
       <Sidebar.Menu.Item className="test_____" title="ChartJS" />
       <Sidebar.Menu.Item title="Morris" />
@@ -144,8 +127,7 @@ const sb = pickTheme => ([
         { key: 1, type: 'primary', text: '17' },
         { key: 2, type: 'danger', text: '3' },
       ]}
-      title="Calendar"
-    />
+      title="Calendar" />
     <Sidebar.Menu.Item
       icon={{ className: 'fa-envelope' }}
       labels={[
@@ -153,8 +135,7 @@ const sb = pickTheme => ([
         { key: 1, type: 'warning', text: '12' },
         { key: 3, type: 'danger', text: '5' },
       ]}
-      title="Mailbox"
-    />
+      title="Mailbox" />
     <Sidebar.Menu.Item icon={{ className: 'fa-folder' }} title="Examples" >
       <Sidebar.Menu.Item title="Invoice" />
       <Sidebar.Menu.Item title="Profile" />
@@ -176,7 +157,9 @@ const sb = pickTheme => ([
       </Sidebar.Menu.Item>
       <Sidebar.Menu.Item title="Level One" />
     </Sidebar.Menu.Item>
-    <Sidebar.Menu.Item active icon={{ className: 'fa-book' }} title="Documentation" />
+    <Sidebar.Menu.Item
+      active icon={{ className: 'fa-book' }}
+      title="Documentation" />
   </Sidebar.Menu>,
   <Sidebar.Menu header="LABELS" key="4">
     <Sidebar.Menu.Item icon={{ color: 'danger' }} title="Danger" />
@@ -204,8 +187,7 @@ const App = ({ children, theme, pickTheme }) => (
     sidebarChildren={sb(pickTheme)}
     footerChildren={footer()}
     sidebarMini
-    theme={theme}
-  >
+    theme={theme}>
     {children}
   </Dashboard>
 );

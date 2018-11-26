@@ -40,13 +40,11 @@ const Header = props => (
       onClick={props.logoOnClick}
       href={props.logoHref}
       logoLg={props.logoLg}
-      logoSm={props.logoSm}
-    />
+      logoSm={props.logoSm} />
     <Navbar
       toggle={props.sidebarToggle}
       collapse={props.sidebarCollapse}
-      sidebarMini={props.sidebarMini}
-    >
+      sidebarMini={props.sidebarMini}>
       {props.children}
     </Navbar>
   </StyledHeader>

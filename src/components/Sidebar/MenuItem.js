@@ -49,7 +49,7 @@ const Label = styled.div`
   margin-right: 5px;
 
   /* ----- color ----- */
-  background-color: ${(props) => {
+  background-color: ${props => {
     switch (props.type) {
       case 'primary':
         return lightBlue;
@@ -103,11 +103,11 @@ const StyledTitle = styled.span`
   user-select: none; /* Non-prefixed version, currently not supported by any browser */
 
   /* collapse */
-  ${props => (!props.level && props.collapse) &&
-    `@media (min-width: ${screenSmMin}) {
+  ${props => (!props.level && props.collapse)
+    && `@media (min-width: ${screenSmMin}) {
       border-top-right-radius: 4px;
-      ${(props.hover ?
-        `
+      ${(props.hover
+    ? `
           display: block !important;
           position: absolute;
           width: ${parseInt(sidebarWidth, 10) - parseInt(sidebarMiniWidth, 10)}px;
@@ -116,14 +116,14 @@ const StyledTitle = styled.span`
           margin-left: -3px;
           padding: 12px 5px 12px 20px;
           background-color: inherit;
-        ` :
         `
+    : `
           display: none !important;
           -webkit-transform: translateZ(0);
         `
-      )}
+  )}
     }`
-  }
+}
 `;
 
 const StyledRightIcon = styled.i`
@@ -148,7 +148,7 @@ const StyledLeftIcon = styled.i`
   width: 20px;
 
   /* ----- color ----- */
-  ${(props) => {
+  ${props => {
     switch (props.color) {
       case 'primary':
         return `color: ${lightBlue};`;
@@ -162,9 +162,9 @@ const StyledLeftIcon = styled.i`
         return `color: ${aqua};`;
       default: {
         const c = tinycolor(props.color);
-        return c.isValid() ?
-          `color: ${c.toString()};` :
-          null;
+        return c.isValid()
+          ? `color: ${c.toString()};`
+          : null;
       }
     }
   }};
@@ -225,24 +225,24 @@ const StyledSubMenu = styled.ul`
   background-color: ${props => props.theme.sidebarSubmenuBg || '#222d32'};
 
   /* ----- collapse ----- */
-  ${props => props.collapse &&
-    `@media (min-width: ${screenSmMin}) {
-      ${props.theme.sidebarSubmenuLgBorderLeft &&
-        `border-left: ${props.theme.sidebarSubmenuLgBorderLeft}`}
+  ${props => props.collapse
+    && `@media (min-width: ${screenSmMin}) {
+      ${props.theme.sidebarSubmenuLgBorderLeft
+        && `border-left: ${props.theme.sidebarSubmenuLgBorderLeft}`}
     }`
-  }
-  ${props => (props.collapse && props.open && !props.level) &&
-    `@media (min-width: ${screenSmMin}) {
+}
+  ${props => (props.collapse && props.open && !props.level)
+    && `@media (min-width: ${screenSmMin}) {
       position: absolute;
       width: ${parseInt(sidebarWidth, 10) - 50}px;
       left: ${sidebarMiniWidth};
       top: 44px;
       margin-left: 0;
       border-bottom-right-radius: 4px;
-      ${(props.theme.sidebarSubmenuLgBorderLeft) &&
-        `border-left: ${props.theme.sidebarSubmenuLgBorderLeft}`}
+      ${(props.theme.sidebarSubmenuLgBorderLeft)
+        && `border-left: ${props.theme.sidebarSubmenuLgBorderLeft}`}
     }`
-  }
+}
 `;
 
 const StyledMenuItem = styled.li`
@@ -279,15 +279,14 @@ const renderChildren = (children, sidebarCollapse, level, hover) => {
 };
 
 const renderLabels = (labels, collapse, hover) => (
-  labels.map((l) => {
+  labels.map(l => {
     if (l.key && l.type && l.text) {
       if (l.key === 1) {
         return (<Label
           collapse={collapse}
           hover={hover}
           key={l.key.toString()}
-          type={l.type}
-        >
+          type={l.type}>
           {l.text}
         </Label>);
       } else if (!collapse) {
@@ -295,8 +294,7 @@ const renderLabels = (labels, collapse, hover) => (
           collapse={collapse}
           hover={hover}
           key={l.key.toString()}
-          type={l.type}
-        >
+          type={l.type}>
           {l.text}
         </Label>);
       }
@@ -306,7 +304,7 @@ const renderLabels = (labels, collapse, hover) => (
 );
 
 class MenuItem extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       open: false,
@@ -316,18 +314,18 @@ class MenuItem extends React.Component {
     this._toggleHover = this.toggleHover.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    (nextProps.collapse !== this.props.collapse) &&
-      this.setState({ open: false });
+  componentWillReceiveProps (nextProps) {
+    (nextProps.collapse !== this.props.collapse)
+      && this.setState({ open: false });
   }
 
-  toggleMenu() {
+  toggleMenu () {
     this.props.children && this.setState({ open: !this.state.open });
   }
 
-  toggleHover(state) { this.setState({ hover: state }); }
+  toggleHover (state) { this.setState({ hover: state }); }
 
-  render() {
+  render () {
     // debugger;
     // console.log('log:', this.props);
     const { className } = this.props;
@@ -340,48 +338,42 @@ class MenuItem extends React.Component {
           collapse={this.props.collapse}
           hover={this.props.parentHover}
           level={this.props.level}
-          onMouseLeave={() => this._toggleHover(false)}
-        >
+          onMouseLeave={() => this._toggleHover(false)}>
           <StyledLink
             active={this.props.active}
             collapse={this.props.collapse}
             hover={this.state.hover}
-            href={(this.props.children || this.props.onClick) ?
-              null : this.props.href}
+            href={(this.props.children || this.props.onClick)
+              ? null : this.props.href}
             level={this.props.level}
-            onClick={this.props.children ?
-              this._toggleMenu : this.props.onClick}
-            onMouseEnter={() => this._toggleHover(true)}
-          >
+            onClick={this.props.children
+              ? this._toggleMenu : this.props.onClick}
+            onMouseEnter={() => this._toggleHover(true)}>
             <StyledLeftIcon
               className={`fa ${this.props.icon.className || 'fa-circle-o'}`}
-              color={this.props.icon.color || 'none'}
-            />
+              color={this.props.icon.color || 'none'} />
             <StyledTitle
               collapse={this.props.collapse}
               hover={this.state.hover}
-              level={this.props.level}
-            >
+              level={this.props.level}>
               {this.props.title}
             </StyledTitle>
             <RightSpan
               collapse={this.props.collapse}
               hover={this.state.hover}
-              level={this.props.level}
-            >
-              {(this.props.labels ?
-                renderLabels(
+              level={this.props.level}>
+              {(this.props.labels
+                ? renderLabels(
                   this.props.labels,
                   this.props.collapse,
                   this.state.hover,
-                ) :
-                this.props.children &&
-                  (<StyledRightIcon
+                )
+                : this.props.children
+                  && (<StyledRightIcon
                     className="fa fa-angle-left"
                     open={this.state.open}
                     collapse={this.props.collapse}
-                    hover={this.state.hover}
-                  />)
+                    hover={this.state.hover} />)
               )}
             </RightSpan>
           </StyledLink>
@@ -390,8 +382,7 @@ class MenuItem extends React.Component {
               collapse={this.props.collapse}
               hover={this.state.hover}
               level={this.props.level}
-              open={this.state.open}
-            >
+              open={this.state.open}>
               {renderChildren(
                 this.props.children,
                 this.props.collapse,
@@ -409,48 +400,42 @@ class MenuItem extends React.Component {
           collapse={this.props.collapse}
           hover={this.props.parentHover}
           level={this.props.level}
-          onMouseLeave={() => this._toggleHover(false)}
-        >
+          onMouseLeave={() => this._toggleHover(false)}>
           <StyledLink
             active={this.props.active}
             collapse={this.props.collapse}
             hover={this.state.hover}
-            href={(this.props.children || this.props.onClick) ?
-              null : this.props.href}
+            href={(this.props.children || this.props.onClick)
+              ? null : this.props.href}
             level={this.props.level}
-            onClick={this.props.children ?
-              this._toggleMenu : this.props.onClick}
-            onMouseEnter={() => this._toggleHover(true)}
-          >
+            onClick={this.props.children
+              ? this._toggleMenu : this.props.onClick}
+            onMouseEnter={() => this._toggleHover(true)}>
             <StyledLeftIcon
               className={`fa ${this.props.icon.className || 'fa-circle-o'}`}
-              color={this.props.icon.color || 'none'}
-            />
+              color={this.props.icon.color || 'none'} />
             <StyledTitle
               collapse={this.props.collapse}
               hover={this.state.hover}
-              level={this.props.level}
-            >
+              level={this.props.level}>
               {this.props.title}
             </StyledTitle>
             <RightSpan
               collapse={this.props.collapse}
               hover={this.state.hover}
-              level={this.props.level}
-            >
-              {(this.props.labels ?
-                renderLabels(
+              level={this.props.level}>
+              {(this.props.labels
+                ? renderLabels(
                   this.props.labels,
                   this.props.collapse,
                   this.state.hover,
-                ) :
-                this.props.children &&
-                  (<StyledRightIcon
+                )
+                : this.props.children
+                  && (<StyledRightIcon
                     className="fa fa-angle-left"
                     open={this.state.open}
                     collapse={this.props.collapse}
-                    hover={this.state.hover}
-                  />)
+                    hover={this.state.hover} />)
               )}
             </RightSpan>
           </StyledLink>
@@ -459,8 +444,7 @@ class MenuItem extends React.Component {
               collapse={this.props.collapse}
               hover={this.state.hover}
               level={this.props.level}
-              open={this.state.open}
-            >
+              open={this.state.open}>
               {renderChildren(
                 this.props.children,
                 this.props.collapse,
